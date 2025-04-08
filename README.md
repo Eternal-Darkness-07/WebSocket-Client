@@ -49,7 +49,7 @@ The following libraries are required for this project:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd InternShip_assignment
+cd WebSocket-Client
 ```
 
 ### Building with GCC
