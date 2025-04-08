@@ -12,7 +12,7 @@ The application allows users to connect to WebSocket servers, send and receive m
 
 The following libraries are required for this project:
 
-1. **Boost** - Used for networking and WebSocket functionality
+1. **Boost** - Used for networking and asynchronous operations
    ```
    sudo apt-get install libboost-all-dev
    ```
@@ -22,7 +22,18 @@ The following libraries are required for this project:
    sudo apt-get install libssl-dev
    ```
 
-3. **GN** - Build system
+3. **WebSocket++** - C++ WebSocket client/server library
+   ```
+   git clone https://github.com/zaphoyd/websocketpp.git
+   cd websocketpp
+   mkdir build
+   cd build
+   cmake ..
+   make
+   sudo make install
+   ```
+
+4. **GN** - Build system
    ```
    git clone https://gn.googlesource.com/gn
    cd gn
@@ -117,3 +128,8 @@ For WebSocket connection issues, verify:
 - The WebSocket server is running and accessible
 - Network connectivity and firewall settings allow WebSocket connections
 - The correct WebSocket URL format is being used (ws:// or wss://)
+
+If you encounter issues with WebSocket++, make sure:
+- You have the correct version installed
+- The library path is correctly set in your build environment
+- All Boost dependencies required by WebSocket++ are installed
