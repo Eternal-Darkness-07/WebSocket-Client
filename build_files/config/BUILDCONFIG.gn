@@ -1,0 +1,33 @@
+declare_args() {
+  # Set to true for debug build, false for release build
+  is_debug = true
+  
+  # Set compiler: "gcc" or "clang"
+  compiler = "gcc"
+}
+
+# Set default configs based on build type
+if (is_debug) {
+  _default_configs = [ "//build_files/config:debug" ]
+} else {
+  _default_configs = [ "//build_files/config:release" ]
+}
+
+set_defaults("executable") {
+  configs = _default_configs
+}
+
+set_defaults("shared_library") {
+  configs = _default_configs
+}
+
+set_defaults("static_library") {
+  configs = _default_configs
+}
+
+# Set default toolchain based on compiler choice
+if (compiler == "gcc") {
+  set_default_toolchain("//build_files/toolchain:gcc")
+} else if (compiler == "clang") {
+  set_default_toolchain("//build_files/toolchain:clang")
+}

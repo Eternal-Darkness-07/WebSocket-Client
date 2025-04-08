@@ -1,0 +1,12 @@
+group("default") {
+  deps = [
+    "//src:chat_app",
+    "//test:unit_tests",
+  ]
+}
+
+group("release") {
+  deps = [
+    "//src:chat_app_release",
+  ]
+}

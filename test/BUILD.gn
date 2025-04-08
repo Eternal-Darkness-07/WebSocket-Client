@@ -1,0 +1,9 @@
+executable("unit_tests") {
+  sources = [
+    "WebSocketClient_test.cpp",
+  ]
+  deps = [
+    "//src:chat_lib",
+  ]
+  configs += [ "//build_files/config:test" ]
+}

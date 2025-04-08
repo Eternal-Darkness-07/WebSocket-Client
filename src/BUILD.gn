@@ -1,0 +1,33 @@
+# Debug build target
+executable("chat_app") {
+  sources = [
+    "ChatInterface.cpp",
+    "ChatInterface.h",
+    "WebSocketClient.cpp",
+    "WebSocketClient.h",
+    "main.cpp",
+  ]
+}
+
+# Release build target
+executable("chat_app_release") {
+  sources = [
+    "ChatInterface.cpp",
+    "ChatInterface.h",
+    "WebSocketClient.cpp",
+    "WebSocketClient.h",
+    "main.cpp",
+  ]
+  # configs += [ "//build_files/config:release" ]
+}
+
+# Library for testing
+static_library("chat_lib") {
+  sources = [
+    "ChatInterface.cpp",
+    "ChatInterface.h",
+    "WebSocketClient.cpp",
+    "WebSocketClient.h",
+  ]
+  visibility = [ "//test:*" ]
+}

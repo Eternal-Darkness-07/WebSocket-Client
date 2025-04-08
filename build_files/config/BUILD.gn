@@ -1,0 +1,38 @@
+# Base configuration with common settings
+config("base") {
+  include_dirs = [ "//src" ]
+  ldflags = [ "-lboost_system", "-lssl", "-lcrypto", "-lpthread" ]
+}
+
+# Debug configuration
+config("debug") {
+  configs = [ ":base" ]
+  cflags = [
+    "-std=c++14",
+    "-g",
+    "-O0",
+    "-Wall",
+    "-Wextra",
+    "-DDEBUG",
+  ]
+}
+
+# Release configuration
+config("release") {
+  configs = [ ":base" ]
+  cflags = [
+    "-std=c++14",
+    "-O3",
+    "-DNDEBUG",
+  ]
+}
+
+# Test configuration
+config("test") {
+  configs = [ ":base" ]
+  cflags = [
+    "-std=c++14",
+    "-g",
+  ]
+  ldflags = [ "-lgtest", "-lgtest_main" ]
+}

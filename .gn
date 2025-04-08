@@ -1,0 +1,2 @@
+# Set the buildfile name to whatever you want
+buildconfig = "//build_files/config/BUILDCONFIG.gn"
