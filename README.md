@@ -48,7 +48,7 @@ The following libraries are required for this project:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/Eternal-Darkness-07/WebSocket-Client.git
 cd WebSocket-Client
 ```
 
